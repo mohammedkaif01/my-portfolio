@@ -9,7 +9,7 @@ import { Bars3Icon, XMarkIcon, BriefcaseIcon, AcademicCapIcon, CodeBracketIcon, 
 // --- Data based on your resume and the new design ---
 const resumeData = {
   name: 'Mohammed Kaif',
-  role: 'Full Stack Developer & Problem Solver',
+  role: 'Full Stack Developer',
   summary: 'Motivated and detail-oriented Computer Applications student with hands-on experience in responsive, full-stack web applications using modern technologies. Passionate about creating scalable, impactful solutions in a collaborative team.',
   contact: {
     email: 'kaifofficial67@gmail.com',
