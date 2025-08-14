@@ -15,7 +15,7 @@ const resumeData = {
     email: 'kaifofficial67@gmail.com',
     linkedin: 'https://www.linkedin.com/in/mohammedkaif67',
     github: 'https://github.com/mohammedkaif01',
-    phone: '+91 9676136481',
+     x: 'https://x.com/Kaif_481',
     location: 'Hyderabad, Telangana'
   },
   skills: [
@@ -361,11 +361,13 @@ const ContactSection = () => (
             </svg>
             <span>GitHub</span>
           </a>
-          <a href={`tel:${resumeData.contact.phone}`} className="flex items-center space-x-4 hover:text-cyan-400 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.5l1.5 4.5L8 10l-1.5 1.5L10 15l1.5-1.5L16 13l4.5 1.5V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+         <a href={resumeData.contact.x} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-cyan-400 transition-colors">
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
+              <g>
+                <path d="M18.244 2.25h3.308l-7.227 8.261 8.502 11.239h-6.63l-5.22-6.873-4.108 6.873H2.072l7.55-10.364L2.242 2.25h6.161L12 8.351zm-1.815 17.615l1.64-2.164-5.632-7.46-1.64 2.165 5.632 7.459z"></path>
+              </g>
             </svg>
-            <span>{resumeData.contact.phone}</span>
+            <span>Twitter</span>
           </a>
         </div>
       </motion.div>
