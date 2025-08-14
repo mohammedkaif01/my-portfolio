@@ -340,7 +340,7 @@ const ContactSection = () => (
         viewport={{ once: true, amount: 0.5 }}
       >
         <p className="text-center text-lg text-gray-300 mb-6">
-          I'm currently seeking a front-end or full-stack internship. Feel free to reach out to me!
+          I&apos;m currently seeking a front-end or full-stack internship. Feel free to reach out to me!
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-400">
           <a href={`mailto:${resumeData.contact.email}`} className="flex items-center space-x-4 hover:text-cyan-400 transition-colors">
