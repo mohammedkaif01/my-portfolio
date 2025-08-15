@@ -9,13 +9,13 @@ import { Bars3Icon, XMarkIcon, BriefcaseIcon, AcademicCapIcon, CodeBracketIcon, 
 // --- Data based on your resume and the new design ---
 const resumeData = {
   name: 'Mohammed Kaif',
-  role: 'Full Stack Developer',
+  role: 'Full Stack Developer & Problem Solver',
   summary: 'Motivated and detail-oriented Computer Applications student with hands-on experience in responsive, full-stack web applications using modern technologies. Passionate about creating scalable, impactful solutions in a collaborative team.',
   contact: {
     email: 'kaifofficial67@gmail.com',
     linkedin: 'https://www.linkedin.com/in/mohammedkaif67',
     github: 'https://github.com/mohammedkaif01',
-     x: 'https://x.com/Kaif_481',
+    twitter: 'https://x.com/your_username_here',
     location: 'Hyderabad, Telangana'
   },
   skills: [
@@ -217,10 +217,7 @@ const AboutSection = () => (
         variants={staggerContainer}
       >
         <motion.div className="lg:w-2/3 text-gray-300" variants={fadeIn}>
-          <p className="text-lg mb-4">{resumeData.summary}</p>
-          <p className="text-md leading-relaxed">
-            I am a final year Computer Applications student at Osmania University, Hyderabad. With a strong academic background and hands-on experience in full-stack development, I am eager to apply my skills in a professional setting. My coursework includes Data Structures, Algorithms, and Software Engineering, which provides a solid foundation for building robust and efficient applications. I am passionate about clean code, responsive design, and collaborative problem-solving.
-          </p>
+          <p className="text-lg mb-4">I am a passionate and detail-oriented professional with a recently completed Bachelor of Computer Applications from Osmania University, Hyderabad. I have cultivated a strong foundation in core computer science principles through coursework in Data Structures, Algorithms, and Software Engineering. My hands-on experience in building responsive, full-stack web applications has equipped me with a robust skill set in modern technologies like React.js, Node.js, and Tailwind CSS. I am proficient in developing RESTful APIs, utilizing version control with Git, and working within Agile methodologies. I am eager to apply my skills and problem-solving abilities to contribute to impactful web solutions as I seek a professional role in the industry.</p>
         </motion.div>
         <motion.div className="lg:w-1/3 w-full" variants={fadeIn}>
           <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
@@ -340,7 +337,7 @@ const ContactSection = () => (
         viewport={{ once: true, amount: 0.5 }}
       >
         <p className="text-center text-lg text-gray-300 mb-6">
-          I&apos;m currently seeking a front-end or full-stack internship. Feel free to reach out to me!
+          I'm currently seeking a front-end or full-stack internship. Feel free to reach out to me!
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-400">
           <a href={`mailto:${resumeData.contact.email}`} className="flex items-center space-x-4 hover:text-cyan-400 transition-colors">
@@ -361,7 +358,7 @@ const ContactSection = () => (
             </svg>
             <span>GitHub</span>
           </a>
-         <a href={resumeData.contact.x} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-cyan-400 transition-colors">
+          <a href={resumeData.contact.twitter} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-cyan-400 transition-colors">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
               <g>
                 <path d="M18.244 2.25h3.308l-7.227 8.261 8.502 11.239h-6.63l-5.22-6.873-4.108 6.873H2.072l7.55-10.364L2.242 2.25h6.161L12 8.351zm-1.815 17.615l1.64-2.164-5.632-7.46-1.64 2.165 5.632 7.459z"></path>
