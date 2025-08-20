@@ -3,10 +3,6 @@ import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon, CodeBracketIcon, ServerStackIcon, AdjustmentsHorizontalIcon, GlobeAltIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
-
-
-
-
   export const resumeData = {
   name: 'Mohammed Kaif',
   role: 'Full-Stack Developer & Problem Solver',

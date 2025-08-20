@@ -1,12 +1,16 @@
+'user client'
 import React from 'react'
 import { motion, Variants } from 'framer-motion';
 
 import { resumeData, SectionHeader, staggerContainer,fadeIn } from '../lib';
+
 function Projects() {
   return (
     
   <section id="projects" className="py-20 p-4">
+
     <div className="container mx-auto">
+
       <SectionHeader title="Featured Projects" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>} />
       <motion.div className="grid md:grid-cols-2 gap-8"
         initial="hidden"

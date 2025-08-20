@@ -2,9 +2,8 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion';
 import { resumeData,fadeIn } from '../lib';
+
 function Contact() {
-
-
 
   return (
       <section id="contact" className="py-20 p-4">

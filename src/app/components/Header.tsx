@@ -3,6 +3,7 @@ import { motion, Variants } from 'framer-motion';
 import { resumeData } from '../lib';
 import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon, CodeBracketIcon, ServerStackIcon, AdjustmentsHorizontalIcon, GlobeAltIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 import { fadeIn } from '../lib';
+
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
 

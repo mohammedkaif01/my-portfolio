@@ -4,11 +4,8 @@ import { CodeBracketIcon, ServerStackIcon, AdjustmentsHorizontalIcon, GlobeAltIc
 import { resumeData } from '../lib';
 import React from 'react'
 
-
-
 function Hero() {
 
-  
   return (
     
      <section id="home" className="min-h-screen flex items-center justify-center text-center p-4">
