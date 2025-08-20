@@ -17,7 +17,7 @@ import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon
     github: 'https://github.com/mohammedkaif01',
     twitter: 'https://x.com/your_username_here',
     location: 'Hyderabad, Telangana',
-    phone: '+91 9676136481',
+    
   },
 
   resumeUrl: 'https://drive.google.com/file/d/1zqu5xwFU4EPC70p4A3D3NTH21eHqE0XS/view?usp=sharing', // Placeholder for your resume file

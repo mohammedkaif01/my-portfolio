@@ -35,7 +35,7 @@ function Contact() {
                 <p className="text-lg text-white">{resumeData.contact.email}</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <div className="p-3 rounded-full bg-white/10 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.5l1.5 4.5L8 10l-1.5 1.5L10 15l1.5-1.5L16 13l4.5 1.5V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
@@ -45,7 +45,7 @@ function Contact() {
                 <p className="text-sm text-gray-500">Phone</p>
                 <p className="text-lg text-white">{resumeData.contact.phone}</p>
               </div>
-            </div>
+            </div> */}
             <div className="flex items-center space-x-4">
               <div className="p-3 rounded-full bg-white/10 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
