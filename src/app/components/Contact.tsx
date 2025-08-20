@@ -1,8 +1,7 @@
 "use client"
 import React from 'react'
 import { motion, Variants } from 'framer-motion';
-import { fadeIn } from '../page';
-import { resumeData } from '../page';
+import { resumeData,fadeIn } from '../lib';
 function Contact() {
 
 

@@ -1,9 +1,7 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion';
-import { SectionHeader } from '../page';
-import { resumeData } from '../page';
-import { staggerContainer } from '../page';
-import { fadeIn } from '../page';
+
+import { resumeData, SectionHeader, staggerContainer,fadeIn } from '../lib';
 function Projects() {
   return (
     

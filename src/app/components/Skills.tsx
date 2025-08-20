@@ -3,7 +3,7 @@ import { motion, Variants } from 'framer-motion';
 import { CodeBracketIcon, ServerStackIcon, AdjustmentsHorizontalIcon, GlobeAltIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
 import React from 'react'
-import { fadeIn } from '../page';
+import { fadeIn } from '../lib';
 
 function Skills (){
   
