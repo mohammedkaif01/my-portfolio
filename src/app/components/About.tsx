@@ -1,18 +1,14 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon, CodeBracketIcon, ServerStackIcon, AdjustmentsHorizontalIcon, GlobeAltIcon, LightBulbIcon } from '@heroicons/react/24/outline';
-import Hero from './components/Hero';
-import Skills from './components/Skills';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 
-// --- Data for the entire website ---
+import React from 'react'
+import { fadeIn } from '../page';
 
-export const resumeData = {
+
+function About() {
+  const resumeData = {
   name: 'Mohammed Kaif',
   role: 'Full-Stack Developer & Problem Solver',
   summary: 'Motivated Computer Applications student with hands-on experience in responsive, full-stack web applications. Skilled in modern technologies and passionate about creating scalable, impactful web solutions.',
@@ -107,13 +103,7 @@ export const resumeData = {
   }
 };
 
-// --- Framer Motion variants for animations ---
-export const fadeIn: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-};
-
-export const staggerContainer: Variants = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -123,109 +113,57 @@ export const staggerContainer: Variants = {
   },
 };
 
-const slideInLeft: Variants = {
-  hidden: { x: -50, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
+const fadeIn: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
-
-const slideInRight: Variants = {
-  hidden: { x: 50, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
-};
-
-  export const SectionHeader = ({ title, icon }: { title: string; icon: React.ReactNode }) => (
-    <motion.div className="flex items-center space-x-4 mb-8"
-      variants={fadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-    >
-      <div className="bg-white/10 p-2 rounded-full text-white">
-        {icon}
-      </div>
-      <h3 className="text-3xl font-bold text-white">{title}</h3>
-    </motion.div>
-  );
-
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetId = e.currentTarget.getAttribute('href')?.substring(1);
-    if (targetId) {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        setIsOpen(false);
-      }
-    }
-  };
-
-  return (
-    <header className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-lg">
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.a href="#home" onClick={handleSmoothScroll} className="text-2xl font-bold text-white"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          MK
-        </motion.a>
-        <div className="hidden md:flex space-x-6 items-center">
-          <motion.a href="#home" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Home</motion.a>
-          <motion.a href="#skills" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Skills</motion.a>
-          <motion.a href="#experience" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Experience</motion.a>
-          <motion.a href="#projects" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Projects</motion.a>
-          <motion.a href="#contact" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Contact</motion.a>
-          <a href={resumeData.resumeUrl} target="_blank" className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-colors">
-            <ArrowDownTrayIcon className="h-5 w-5" />
-            <span>Resume</span>
-          </a>
-        </div>
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
-            {isOpen ? <XMarkIcon className="h-7 w-7" /> : <Bars3Icon className="h-7 w-7" />}
-          </button>
-        </div>
-      </nav>
-      {isOpen && (
-        <motion.div className="md:hidden bg-black/90 backdrop-blur-sm"
-          initial={{ height: 0 }}
-          animate={{ height: 'auto' }}
-          exit={{ height: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="flex flex-col items-center py-4 space-y-2">
-            <a href="#about" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="#skills" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Skills</a>
-            <a href="#experience" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Experience</a>
-            <a href="#projects" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Projects</a>
-            <a href={resumeData.resumeUrl} download className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-colors">
-              <ArrowDownTrayIcon className="h-5 w-5" />
-              <span>Resume</span>
-            </a>
-            <a href="#contact" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Contact</a>
-          </div>
-        </motion.div>
-      )}
-    </header>
-  );
-};
-
-export default function App() {
-  return (
-    <div className="font-sans antialiased bg-gray-950 text-white">
-      <Header />
-      <main>
-        <Hero/>
-        <About/>
-        <Skills/>
-        <Experience/>
-        <Projects/>
-        <Contact/>
-      </main>
-      <Footer />
+const SectionHeader = ({ title, icon }: { title: string; icon: React.ReactNode }) => (
+  <motion.div className="flex items-center space-x-4 mb-8"
+    variants={fadeIn}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }}
+  >
+    <div className="bg-white/10 p-2 rounded-full text-white">
+      {icon}
     </div>
-  );
+    <h3 className="text-3xl font-bold text-white">{title}</h3>
+  </motion.div>
+);
+  
+return (
+      <section id="about" className="py-20 p-4">
+        <div className="container mx-auto">
+          <SectionHeader title="About Me" icon={<AcademicCapIcon className="h-6 w-6 text-pink-400" />} />
+          <motion.div className="flex flex-col lg:flex-row items-start gap-8 bg-gray-900 p-8 rounded-2xl shadow-xl border border-gray-800"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+          >
+            <motion.div className="lg:w-2/3 text-gray-300" variants={fadeIn}>
+              <p className="text-lg mb-4">I am a passionate and detail-oriented professional with a recently completed Bachelor of Computer Applications from Osmania University, Hyderabad. I have cultivated a strong foundation in core computer science principles through coursework in Data Structures, Algorithms, and Software Engineering. My hands-on experience in building responsive, full-stack web applications has equipped me with a robust skill set in modern technologies like React.js, Node.js, and Tailwind CSS. I am proficient in developing RESTful APIs, utilizing version control with Git, and working within Agile methodologies. I am eager to apply my skills and problem-solving abilities to contribute to impactful web solutions as I seek a professional role in the industry.</p>
+            </motion.div>
+            <motion.div className="lg:w-1/3 w-full" variants={fadeIn}>
+              <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                <h4 className="text-xl font-semibold text-white mb-4">Education</h4>
+                <div className="text-gray-400">
+                  <p className="font-bold text-white text-lg">{resumeData.education.degree}</p>
+                  <p className="text-md">{resumeData.education.university}</p>
+                  <p className="text-sm">{resumeData.education.dates}</p>
+                </div>
+                <h5 className="text-white font-semibold mt-4 mb-2">Relevant Coursework:</h5>
+                <div className="grid grid-cols-2 gap-2 text-sm text-gray-400">
+                    {resumeData.education.relevantCoursework.map((course, index) => (
+                        <span key={index} className="bg-gray-700 px-3 py-1 rounded-full text-center">{course}</span>
+                    ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+  )
 }
+
+export default About

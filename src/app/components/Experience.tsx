@@ -1,18 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon, CodeBracketIcon, ServerStackIcon, AdjustmentsHorizontalIcon, GlobeAltIcon, LightBulbIcon } from '@heroicons/react/24/outline';
-import Hero from './components/Hero';
-import Skills from './components/Skills';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 
-// --- Data for the entire website ---
+import React from 'react'
 
-export const resumeData = {
+function Experience() {
+
+const resumeData = {
   name: 'Mohammed Kaif',
   role: 'Full-Stack Developer & Problem Solver',
   summary: 'Motivated Computer Applications student with hands-on experience in responsive, full-stack web applications. Skilled in modern technologies and passionate about creating scalable, impactful web solutions.',
@@ -107,33 +102,12 @@ export const resumeData = {
   }
 };
 
-// --- Framer Motion variants for animations ---
-export const fadeIn: Variants = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-export const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const slideInLeft: Variants = {
-  hidden: { x: -50, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
-};
-
-const slideInRight: Variants = {
-  hidden: { x: 50, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
-};
-
-  export const SectionHeader = ({ title, icon }: { title: string; icon: React.ReactNode }) => (
+  const SectionHeader = ({ title, icon }: { title: string; icon: React.ReactNode }) => (
     <motion.div className="flex items-center space-x-4 mb-8"
       variants={fadeIn}
       initial="hidden"
@@ -146,86 +120,44 @@ const slideInRight: Variants = {
       <h3 className="text-3xl font-bold text-white">{title}</h3>
     </motion.div>
   );
-
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetId = e.currentTarget.getAttribute('href')?.substring(1);
-    if (targetId) {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        setIsOpen(false);
-      }
-    }
-  };
-
-  return (
-    <header className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-lg">
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.a href="#home" onClick={handleSmoothScroll} className="text-2xl font-bold text-white"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          MK
-        </motion.a>
-        <div className="hidden md:flex space-x-6 items-center">
-          <motion.a href="#home" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Home</motion.a>
-          <motion.a href="#skills" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Skills</motion.a>
-          <motion.a href="#experience" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Experience</motion.a>
-          <motion.a href="#projects" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Projects</motion.a>
-          <motion.a href="#contact" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors" variants={fadeIn}>Contact</motion.a>
-          <a href={resumeData.resumeUrl} target="_blank" className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-colors">
-            <ArrowDownTrayIcon className="h-5 w-5" />
-            <span>Resume</span>
-          </a>
-        </div>
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
-            {isOpen ? <XMarkIcon className="h-7 w-7" /> : <Bars3Icon className="h-7 w-7" />}
-          </button>
-        </div>
-      </nav>
-      {isOpen && (
-        <motion.div className="md:hidden bg-black/90 backdrop-blur-sm"
-          initial={{ height: 0 }}
-          animate={{ height: 'auto' }}
-          exit={{ height: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="flex flex-col items-center py-4 space-y-2">
-            <a href="#about" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="#skills" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Skills</a>
-            <a href="#experience" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Experience</a>
-            <a href="#projects" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Projects</a>
-            <a href={resumeData.resumeUrl} download className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-colors">
-              <ArrowDownTrayIcon className="h-5 w-5" />
-              <span>Resume</span>
-            </a>
-            <a href="#contact" onClick={handleSmoothScroll} className="text-gray-300 hover:text-white transition-colors">Contact</a>
-          </div>
-        </motion.div>
-      )}
-    </header>
-  );
+  
+  const slideInLeft: Variants = {
+  hidden: { x: -50, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
 };
 
-export default function App() {
-  return (
-    <div className="font-sans antialiased bg-gray-950 text-white">
-      <Header />
-      <main>
-        <Hero/>
-        <About/>
-        <Skills/>
-        <Experience/>
-        <Projects/>
-        <Contact/>
-      </main>
-      <Footer />
-    </div>
-  );
-}
+const slideInRight: Variants = {
+  hidden: { x: 50, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
+};
+
+return(
+    <section id="experience" className="py-20 p-4">
+        <div className="container mx-auto">
+          <SectionHeader title="Professional Experience" icon={<BriefcaseIcon className="h-6 w-6 text-teal-400" />} />
+          <div className="space-y-8">
+            {resumeData.experience.map((job, index) => (
+              <motion.div key={index} className="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-800"
+                variants={index % 2 === 0 ? slideInLeft : slideInRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <h4 className="text-2xl font-bold text-white">{job.title}</h4>
+                  <span className="text-gray-500 text-sm">{job.dates}</span>
+                </div>
+                <p className="text-md font-semibold text-gray-300">{job.company} - {job.location}</p>
+                <ul className="list-disc list-inside mt-4 space-y-2 text-gray-400">
+                  {job.description.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      )
+};
+export default Experience
