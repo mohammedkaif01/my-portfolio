@@ -55,6 +55,22 @@ import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon
   ],
   projects: [
     {
+      name: 'multi-Country Clock',
+      tagline: 'Realtime International Clock Visualizer',
+      category: 'Gig Project',
+      description: 'A responsive web application that allows users to view the current time across different time zones worldwide. Built with React.js, it provides a simple and interactive way to check global times in real time.',
+      features: [
+        'Real-Time Clock: Automatically updates every second to display the live time',
+        'Timezone Selection: Users can select from multiple time zones to instantly view local time',
+        'Date Display: Shows the current date along with the time for the selected timezone',
+        'Clean UI: Modern and minimal interface with smooth transitions',
+        'Responsive Design: Fully optimized for desktop and mobile devices',
+      ],
+      technologies: ['HTML5', 'CSS3', 'JavaScript','Tailwind CSS','React'],
+      liveDemoUrl: 'https://multi-country-clock.vercel.app',
+      codeUrl: 'https://github.com/mohammedkaif01/multi-country-clock',
+    },
+    {
       name: 'Eco-Alert',
       tagline: 'Civic Issue Reporting Platform',
       category: 'Hackathon Project',
@@ -68,7 +84,7 @@ import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon
       ],
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL', 'Geolocation API', 'Tailwind CSS'],
       liveDemoUrl: '#',
-      codeUrl: '#',
+      codeUrl: 'https://github.com/mohammedkaif01/ecoalert-hackathon',
     },
     {
       name: 'Tic Tac Toe Game',
@@ -84,7 +100,7 @@ import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon
       ],
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'DOM Manipulation', 'Event Listeners'],
       liveDemoUrl: '#',
-      codeUrl: '#',
+      codeUrl: 'https://github.com/mohammedkaif01/tic-tac-toe',
     },
   ],
   education: {
